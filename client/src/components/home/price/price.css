@@ -1,0 +1,13 @@
+.recent .text {
+    padding: 30px;
+  }
+  .recent p {
+    color: #000000;
+  }
+  .recent .button {
+    border-top: 1px solid #e4e8f3;
+    padding: 10px 30px;
+  }
+  button{
+    background: #000000;
+  }
