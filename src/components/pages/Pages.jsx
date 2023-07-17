@@ -12,9 +12,10 @@ const Pages = () => {
       <Router>
         <NavBar/>
         <Switch>
-          <Route exact path="/home" component={Home}/>
-          <Route exact path="/information" component={RutInformation}/>
-          <Route exact path="/help" component={RutHelp}/>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/vuelos" component={Home}/>
+          <Route exact path="/informacion" component={RutInformation}/>
+          <Route exact path="/ayuda" component={RutHelp}/>
           <Route exact path="*" component={RutError}/>
         </Switch>
         <Footer/>

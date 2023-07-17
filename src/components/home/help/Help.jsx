@@ -8,7 +8,7 @@ const Help = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_1mdfod3', 'template_9cfok9l', form.current, 'u3FWYCDd_CApP0bOv')
+    emailjs.sendForm('service_1mdfod3', 'template_9cfok9l', form.current, 'TzP3QJTI-EO-ULp6G')
       .then((result) => {
           console.log(result.text);
       }, (error) => {
@@ -19,16 +19,14 @@ const Help = () => {
   return (
     <form ref={form} onSubmit={sendEmail}>
         <div className='container'>
-          <form className='shadow'>
-            <h4>Fillup The Form</h4> <br />
+            <h4>Centro de ayuda</h4> <br />
             <div>
               <input type='text' name="user_name" placeholder='Name' />
-              <input type='text' name="user_mail"placeholder='Email' />
-              <label>Message</label>
+              <input type='email' name="user_mail"placeholder='Email' />
+              <label>Mensaje</label>
               <textarea name="message" />
               <input type="submit" value="Send" />
               </div>
-          </form>
         </div>
     </form>
   );
