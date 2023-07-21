@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import "./header.css"
@@ -15,6 +16,30 @@ const NavBar = () => {
     const [isSecond, setisSecond] = useState(false);
     const cerrar = () => setisSecond(false);
     const abrir = () => setisSecond(true);
+
+    const [NombreCompleto, setNombre] = useState('');
+    const [Documento, setDocumento] = useState('');
+    const [correo, setEmail] = useState('');
+    const [contraseña, setContraseña] = useState('');
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+  
+      const data = {
+        NombreCompleto: NombreCompleto,
+        correo: correo,
+        contraseña: contraseña,
+      };
+  
+      axios.post('http://localhost:3000/registro', data)
+        .then((response) => {
+          console.log(response.data);
+          // Aquí puedes manejar la respuesta del servidor si es necesario
+        })
+        .catch((error) => {
+          console.error('Error al enviar el formulario', error);
+        });
+    };
     return (
         <>
         <nav>
@@ -75,15 +100,18 @@ const NavBar = () => {
           </Button>
         </Modal.Footer>
 </Modal>
+
 <Modal show={isSecond} onHide={cerrar}>
         <Modal.Header closeButton>
         </Modal.Header>
-        <Modal.Body><div className="Auth-form-content">
+        <Modal.Body><div className="Auth-form-content" onSubmit={handleSubmit}>
           <h3 className="Auth-form-title">Register</h3>
           <div className="form-group mt-3">
             <label>Nombre completo</label>
             <input
               type="text"
+              value={NombreCompleto}
+              onChange={(e) => setNombre(e.target.value)} placeholder='NombreCompleto'
               className="form-control mt-1"
             />
           </div>
@@ -91,6 +119,8 @@ const NavBar = () => {
             <label>Documento</label>
             <input
               type="text"
+              value={Documento}
+              onChange={(e) => setDocumento(e.target.value)} placeholder='Documento'
               className="form-control mt-1"
             />
           </div>
@@ -98,6 +128,8 @@ const NavBar = () => {
             <label>Correo</label>
             <input
               type="email"
+              value={correo}
+              onChange={(e) => setEmail(e.target.value)} placeholder='correo'
               className="form-control mt-1"
             />
           </div>
@@ -105,6 +137,8 @@ const NavBar = () => {
             <label>Contraseña</label>
             <input
               type="password"
+              value={contraseña}
+              onChange={(e) => setContraseña(e.target.value)} placeholder='contraseña'
               className="form-control mt-1"
             />
           </div>
@@ -113,7 +147,7 @@ const NavBar = () => {
           </div>
         </div></Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={cerrar}>
+          <Button type='submit' variant="primary" onClick={cerrar}>
             Enviar
           </Button>
         </Modal.Footer>
