@@ -43,6 +43,6 @@ Esta implementacion la podemos ver en la ruta de home/help/Help.jsx
 
 Fue divertido trabajar una pagina web asi pese a las dificultades con el grupo se intento avanzar lo que mas se pudo dejando varias cosas por hacer que se buscaba desde el principio pero por diferentes factores no se logro
 
-# AGRADECIENTOS
+# AGRADECIMIENTOS
 
 Gracias profesor por la espera.
