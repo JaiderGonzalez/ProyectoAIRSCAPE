@@ -7,6 +7,7 @@ Para el funcionamiento correcto de AIRSCAPE puedes seguir los siguientes pasos
 descargada y abrir con (code .); tambien en el apartado de File en visual puede abrir esta carpeta que por lo general lo encuentras en descargas.
 3-Con la carpeta importada en VISUAL CODE abres nuevamente la consola y importas los paquetes usados con el comando de (npm install).
 4-Por ultimo con (npm start) se inicia el proyecto en el puerto 3000.
+5- para implementar el backend, vamos a la carpeta de backend y ponemos en la terminal node server.js.
 
 # QUIENES SOMOS
 
